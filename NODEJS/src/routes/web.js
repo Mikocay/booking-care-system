@@ -4,19 +4,25 @@ import homeController from '../controllers/homeController';
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-  // home
+  // HOME
   router.get('/', (req, res) => {
     return homeController.getHomePage(req, res);
   });
-  // crud
+
+  // CRUD
   router.get('/crud', (req, res) => {
     return homeController.getCrud(req, res);
   });
-  // post crud
+  // POST CRUD
   router.post('/post-crud', (req, res) => {
     return homeController.postCrud(req, res);
   });
-  // test
+  // GET CRUD
+  router.get('/get-crud', (req, res) => {
+    return homeController.displayCrud(req, res);
+  });
+
+  // TEST
   router.get('/test', (req, res) => {
     return homeController.getTestPage(req, res);
   });
