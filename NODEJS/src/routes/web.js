@@ -21,7 +21,13 @@ let initWebRoutes = (app) => {
   router.get('/get-crud', (req, res) => {
     return homeController.displayCrud(req, res);
   });
-
+  // EDIT CRUD
+  router.get('/edit-crud', (req, res) => {
+    return homeController.getEditPage(req, res);
+  });
+  router.post('/put-crud', (req, res) => {
+    return homeController.putCrud(req, res);
+  });
   // TEST
   router.get('/test', (req, res) => {
     return homeController.getTestPage(req, res);

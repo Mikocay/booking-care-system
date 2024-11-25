@@ -40,6 +40,7 @@
                 <th>Last Name</th>
                 <th>Address</th>
                 <th>Phone Number</th>
+                <th>Action</th>
             </tr>
             <% for(let i=0; i < dataTable.length; i++) { %>
                 <tr>
@@ -57,6 +58,10 @@
                     </td>
                     <td>
                         <%= dataTable[i].phoneNumber %>
+                    </td>
+                    <td>
+                        <a href="/edit-crud?id=<%= dataTable[i].id %>">Edit |</a>
+                        <a href="/delete-crud?id=/<%= dataTable[i].id %>">Delete</a>
                     </td>
                 </tr>
                 <% } %>
