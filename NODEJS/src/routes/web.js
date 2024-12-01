@@ -28,6 +28,10 @@ let initWebRoutes = (app) => {
   router.post('/put-crud', (req, res) => {
     return homeController.putCrud(req, res);
   });
+  // DELETE CRUD
+  router.get('/delete-crud', (req, res) => {
+    return homeController.deleteCrud(req, res);
+  });
   // TEST
   router.get('/test', (req, res) => {
     return homeController.getTestPage(req, res);

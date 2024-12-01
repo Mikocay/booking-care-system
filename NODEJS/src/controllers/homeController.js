@@ -78,6 +78,17 @@ let putCrud = async (req, res) => {
   }
 };
 
+// DELETE CRUD
+let deleteCrud = (req, res) => {
+  let userId = req.query.id;
+  if (userId) {
+    CRUDService.deleteUserById(userId);
+    return res.redirect('/get-crud');
+  } else {
+    return res.status(400).send('User ID is not provided');
+  }
+};
+
 // test page
 let getTestPage = (req, res) => {
   return res.render('test/testPage.ejs');
@@ -94,4 +105,6 @@ module.exports = {
   postCrud: postCrud,
   // PUT
   putCrud: putCrud,
+  // DELETE
+  deleteCrud: deleteCrud,
 };
